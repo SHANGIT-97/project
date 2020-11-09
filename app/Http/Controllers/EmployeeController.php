@@ -31,8 +31,8 @@ class EmployeeController extends Controller
        ]) ;
        
        $query=DB::table('employees')->insert([
-            'EmpID'=>$request->input(''),
-            'name'=>$request->input('name'),
+            'EmpID'=>$request->input('EmpID'),
+            'name'=>$request->input('name'),                                
             'salary'=>$request->input('salary'),
             'email'=>$request->input('email'),
             'mobileNo'=>$request->input('mobileNo'),

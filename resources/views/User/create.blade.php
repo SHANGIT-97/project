@@ -51,7 +51,7 @@
                 </div>
                     <div class="row">
                         <div class="col-md-6" style="margin-top:20px">
-                        <form action="save" method="post"></form>
+                        <form action="" method="post">
                             <table>
                                 <th>EmpID</th>
                                 <th>Name</th>

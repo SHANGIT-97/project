@@ -43,20 +43,8 @@
                 <div class="row">
                     <div class="col-md-6" style="margin-top:20px">
 
-                    @if(Session::get('success'))
-                        <div class="alert alert-success">
-                            {{ Session::get('success')}}
-                        </div>
-                    @endif
-
-                    @if(Session::get('fail'))
-                        <div class="alert alert-danger">
-                            {{ Session::get('fail')}}
-                        </div>
-                    @endif
-
-                        <form action="/saveuser" method="post">
-                        {{csrf_field()}}
+                        <form action="create" method="post">
+                        @csrf
                             <div class="form-group">
                             <div class="row">
                                 <div class="col-25">
@@ -137,7 +125,7 @@
 
                             <div class="form-group">
                             
-                                <input type="submit" formaction="{{url('/User/saveuser')}}" value="Save">
+                                <input type="submit" class="{{url('/User/create')}}" value="Save">
                          
                             </div>
 

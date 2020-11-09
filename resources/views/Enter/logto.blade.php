@@ -48,7 +48,7 @@
             </div>
                 <div class="row">
                     <div class="col-md-6" style="margin-top:20px">
-                        <form method="post" action="">
+                        <form method="POST" action="create">
                         {{@csrf_field()}}
                             <div class="form-group">
                                 <div class="row">

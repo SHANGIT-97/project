@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-md-6" style="margin-top:20px">
                         <form action="" method="post">
-                        {{@csrf_field()}}
+                        @csrf
                         <div class="b">
                             <div class="form-group">
                                 <input type="submit" class="button button1" value="Dashboard">

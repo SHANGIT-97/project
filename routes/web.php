@@ -22,42 +22,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('adduser',function(){
- //   $data=App\Models\Employee::all();
-  //  return view('saveuser')->with('employees',$data);
-//}) ; 
+ 
 
-Route::post('/saveuser',[UserController::class,'store']); 
 
-//Route::post('login',[HomeController::class,'index']);
 
-//Route::get('register', function () {
-//    return view('register');
-//});
-
-//Route::get('home', function () {
-//    return view('home');
-//});
 
 Route::get('/',[LoginController::class,'index']);
 Route::get('/Enter',[LoginController::class,'index']);
 Route::post('/Enter/logto',[LoginController::class,'create']);
 Route::post('/Enter/regto',[LoginController::class,'register']);
-Route::post('/Enter/register',[LoginController::class,'gohome']);
-//Route::post('/Enter/success',[LoginController::class,'gohome']);
-
-
-Route::post('register',[RegisterContoller::class,'store']);
-
+Route::post('Enter/register',[LoginController::class,'gohome']);
 
 
 Route::post('/User/adduser',[EmployeeController::class,'index']);
-//Route::post('/User/saveuser',[EmployeeController::class,'view']);
-Route::post('/User/saveuser',function(){
-   $data=App\Models\Employee::all();
-    return view('User/saveuser')->with('employees',$data);
-}) ;
-//Route::get('/User/saveuser',[EmployeeController::class,'store']);
+Route::post('/User/create',function(){
+  $data=App\Models\Employee::all();
+    return view('User/create')->with('employees',$data);
+});
+Route::post('Enter/add',[LoginController::class,'gohome']);
 
-//Route::get('/User/adduser',[EmployeeController::class,'store']);
+Route::post('add',[LoginController::class,'add']);
+
+
+
 

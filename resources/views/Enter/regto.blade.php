@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
  <html>
  <head>
     <meta charset="utf-8"/>
@@ -61,9 +61,19 @@
             
                 <div class="row">
                     <div class="col-md-6" style="margin-top:20px">
-                    
-                        <form  method="post" action="register" class="form-horizontal">
-                        {{@csrf_field()}}
+                    @if(Session::get('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success')}}
+                        </div>
+                    @endif
+
+                    @if(Session::get('fail'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('fail')}}
+                        </div>
+                    @endif
+                        <form  method="POST" action="add">
+                        @csrf
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-25">
@@ -96,7 +106,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" class="{{url('/Enter/register')}}" value="Register">
+                                <input type="submit" class="{{url('/Enter/add')}}" value="Register">
                             </div>
                         </form>
                         
